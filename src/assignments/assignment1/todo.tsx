@@ -1,19 +1,25 @@
 import { useState } from 'react'
 import './todo.css'
 
+type TodoItem = {
+  id: number;
+  task: string;
+  completed: boolean;
+};
+
 function Todo() {
 
-  const [todos, setTodos] = useState([
+  const [todos, setTodos] = useState<TodoItem[]>([
     { id: 1, task: 'Set Up', completed: false },
     { id: 2, task: 'Implementation', completed: false },
     { id: 3, task: 'Assignment', completed: false }
   ])
 
-  const changeStatus = (id) => {
+  const changeStatus = (id: number) => {
     setTodos(todos.map((todo) => todo.id === id ? { ...todo, completed: !todo.completed } : todo))
   }
 
-  const deleteTask = (id) => {
+  const deleteTask = (id: number) => {
     setTodos(todos.filter((todo) => todo.id !== id))
   }
 

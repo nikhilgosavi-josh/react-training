@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Todo from "./assignments/assignment1/todo.jsx";
+import Todo from "./assignments/assignment1/todo";
 // import Assignment2 from "./assignments/assignment2/Assignment2";
 
 function AppRoutes() {
