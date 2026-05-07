@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Todo from "./assignments/assignment1/todo";
-// import Assignment2 from "./assignments/assignment2/Assignment2";
+import Assn2 from "./assignments/assignment2/todoApi"
 
 function AppRoutes() {
 
@@ -8,7 +8,7 @@ function AppRoutes() {
         <Routes>
             <Route path="/" element={<Navigate to="/todo" />} />
             <Route path="/todo" element={<Todo />} />
-            {/* Add more assignments here */}
+            <Route path="/todo1" element={<Assn2 />} />
         </Routes>
     );
 }
