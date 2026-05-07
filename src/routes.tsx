@@ -1,14 +1,14 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Todo from "./assignments/assignment1/todo";
-import Assn2 from "./assignments/assignment2/todoApi"
+import Asgn2 from "./assignments/assignment2/todoApi"
 
 function AppRoutes() {
 
     return (
         <Routes>
             <Route path="/" element={<Navigate to="/todo" />} />
-            <Route path="/todo" element={<Todo />} />
-            <Route path="/todo1" element={<Assn2 />} />
+            <Route path="/asgn1" element={<Todo />} />
+            <Route path="/asgn2" element={<Asgn2 />} />
         </Routes>
     );
 }

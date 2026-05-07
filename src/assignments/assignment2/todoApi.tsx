@@ -27,7 +27,7 @@ const getTodos = async (): Promise<Todo[]> => {
     return data.todos
 }
 
-function Assn2() {
+function Asgn2() {
 
     const { data: todos, isLoading, error } = useFetch<Todo[]>(getTodos)
 
@@ -48,4 +48,4 @@ function Assn2() {
     </>
 }
 
-export default Assn2;
+export default Asgn2;
