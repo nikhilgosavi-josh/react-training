@@ -1,12 +1,7 @@
 import { useMemo, useState } from "react"
 import useCopyToClickboard from "./useCopyToClickboard"
+import { initialTodos } from "./constants"
 
-const initialTodos = [
-    { id: 1, task: "Task 1", completed: false },
-    { id: 2, task: "Task 2", completed: true },
-    { id: 3, task: "Task 3", completed: false },
-    { id: 4, task: "Task 4", completed: false }
-]
 export default function Asgn5() {
     const [search, setSearch] = useState("")
     const [sortDir, setSortDir] = useState("asc")
@@ -50,7 +45,6 @@ export default function Asgn5() {
             <ul>{filteredTodos.map((todo) => (
                 <TodoItem key={todo.id} todo={todo} />
             ))}</ul>
-            <div>{ }</div>
         </>
     )
 }
