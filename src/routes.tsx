@@ -8,7 +8,6 @@ function AppRoutes() {
         <Routes>
             <Route path="/" element={<Navigate to="/todo" />} />
             <Route path="/todo" element={<Todo />} />
-            {/* Add more assignments here */}
         </Routes>
     );
 }
