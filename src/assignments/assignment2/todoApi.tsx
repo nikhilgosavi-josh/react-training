@@ -1,14 +1,6 @@
 import useFetch from "./useFetch";
-
-type Todo = {
-    id: number,
-    todo: string,
-    completed: boolean
-}
-
-type TodoResponse = {
-    todos: Todo[];
-}
+import type { Todo, TodoResponse } from "./types";
+import { TODO_API_URL } from "./constants";
 
 const clientAPI = {
     async get(url: string) {
@@ -23,7 +15,7 @@ const clientAPI = {
 }
 
 const getTodos = async (): Promise<Todo[]> => {
-    const data: TodoResponse = await clientAPI.get("https://dummyjson.com/todos")
+    const data: TodoResponse = await clientAPI.get(TODO_API_URL)
     return data.todos
 }
 
