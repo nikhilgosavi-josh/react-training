@@ -5,7 +5,7 @@ export default function TodoDetails() {
     return (
         <>
             <h1>Todo Details</h1>
-            <div>{`Todo id: ${id}`}</div>
+            <div>Todo id: {id}</div>
         </>
     )
 }

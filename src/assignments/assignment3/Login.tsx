@@ -1,17 +1,18 @@
 import { useNavigate } from "react-router-dom"
+import { ROUTES } from "./constants";
 
 
 export default function Login() {
     const navigate = useNavigate();
 
-    const login = () => {
+    const handleLogin = () => {
         localStorage.setItem("isLoggedIn", 'true')
-        navigate('/asgn3/add-todo')
+        navigate(ROUTES.AddTodo)
     }
     return (
         <>
             <h1>Login Page</h1>
-            <button onClick={login}>Click to login</button>
+            <button onClick={handleLogin}>Click to login</button>
         </>
     )
 }
