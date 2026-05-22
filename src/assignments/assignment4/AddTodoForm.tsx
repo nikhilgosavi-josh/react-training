@@ -1,5 +1,6 @@
 import { useState } from "react";
 import apiFetch from "./apiClient";
+import { ADD_TODO_API_URL } from "./constants";
 
 export default function AddTodoForm() {
     const [title, setTitle] = useState("")
@@ -8,7 +9,7 @@ export default function AddTodoForm() {
 
     const handleSubmit = async () => {
         try {
-            await apiFetch("https://dummyjson.com/todos/add",
+            await apiFetch(ADD_TODO_API_URL,
                 {
                     method: "POST", body: JSON.stringify({ title, dueDate })
                 })
