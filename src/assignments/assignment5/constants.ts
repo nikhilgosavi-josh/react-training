@@ -6,3 +6,5 @@ export const initialTodos: Todo[] = [
   { id: 3, task: "Task 3", completed: false },
   { id: 4, task: "Task 4", completed: false }
 ]
+
+export const API_URL = "https://jsonplaceholder.typicode.com";
