@@ -1,16 +1,11 @@
-import { useQuery } from "@tanstack/react-query";
 import { useReducer, useState } from "react";
-import { fetchTodos } from "./api";
 import { initialState, reducer } from "./reducer";
+import { useTodos } from "./useTodos";
 
 export default function Asgn7() {
     const [state, dispatch] = useReducer(reducer, initialState)
 
-    const { data, isLoading, error } = useQuery({
-        queryKey: ["todos", state.page, state.search, state.sort],
-        queryFn: () => fetchTodos(state.page, state.search, state.sort),
-        staleTime: 10000,
-    })
+    const { data, isLoading, error } = useTodos(state.page, state.search, state.sort)
 
     return (
         <>
