@@ -12,8 +12,6 @@ export default function Asgn7() {
         staleTime: 10000,
     })
 
-    if (isLoading) return <>Loading...</>
-    if (error) return <>Error while fetching data</>
     return (
         <>
             <div>
@@ -26,12 +24,18 @@ export default function Asgn7() {
                 </span>
             </div>
 
-            <ul>{data?.todos.map((todo: any) => (
-                <li key={todo.id}>
-                    <span>{todo.title}</span>
-                    <span>{todo.completed ? "Done" : "Pending"}</span>
-                </li>
-            ))}</ul>
+            {isLoading ? (
+                <>Loading...</>
+            ) : error ? (
+                <>Error while fetching data</>
+            ) : (
+                <ul>{data?.todos.map((todo: any) => (
+                    <li key={todo.id}>
+                        <span>{todo.title}</span>
+                        <span>{todo.completed ? "Done" : "Pending"}</span>
+                    </li>
+                ))}</ul>
+            )}
             <div>
                 <button onClick={() => dispatch({ type: "SET_PAGE", payload: state.page - 1 })} disabled={state.page === 1}>Previous</button>
                 <button onClick={() => dispatch({ type: "SET_PAGE", payload: state.page + 1 })}>Next</button>
