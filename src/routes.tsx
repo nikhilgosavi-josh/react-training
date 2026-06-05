@@ -9,6 +9,7 @@ import ProtectedRoute from "./assignments/assignment3/ProtectedRoute";
 import AddTodoForm from "./assignments/assignment4/AddTodoForm";
 import Asgn5 from "./assignments/assignment5/TodoOptimized";
 import Asgn6 from "./assignments/assignment6/TodoQuery";
+import Asgn7 from "./assignments/assignment7/TodoQuery";
 
 // function AppRoutes() {
 
@@ -21,7 +22,8 @@ const router = createBrowserRouter([
     { path: 'login', element: (<Login />) },
     { path: '/asgn4', element: <AddTodoForm /> },
     { path: '/asgn5', element: <Asgn5 /> },
-    { path: '/asgn6', element: <Asgn6 /> }
+    { path: '/asgn6', element: <Asgn6 /> },
+    { path: '/asgn7', element: <Asgn7 /> }
 ])
 
 // return (
