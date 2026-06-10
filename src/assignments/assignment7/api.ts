@@ -1,6 +1,8 @@
+import { API_URL } from "../assignment5/constants";
+
 export async function fetchTodos(page: number, search: string, sort: string) {
     let limit = 10
-    const response = await fetch(`https://jsonplaceholder.typicode.com/todos?_limit=${limit}&_page=${page}`)
+    const response = await fetch(`${API_URL}/todos?_limit=${limit}&_page=${page}`);
     let todos = await response.json();
 
     if (search) {

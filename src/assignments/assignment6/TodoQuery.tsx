@@ -1,17 +1,12 @@
-import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-import { fetchTodos } from "./api";
+import { useTodos } from "./useTodos";
 
 export default function Asgn6() {
-    const [page, setPage] = useState(1)
-    const [search, setSearch] = useState("")
-    const [sort, setSort] = useState("")
+    const [page, setPage] = useState<number>(1)
+    const [search, setSearch] = useState<string>("")
+    const [sort, setSort] = useState<string>("")
 
-    const { data, isLoading, error } = useQuery({
-        queryKey: ["todos", page, search, sort],
-        queryFn: () => fetchTodos(page, search, sort),
-        placeholderData: (previousData) => previousData
-    })
+    const { data, isLoading, error } = useTodos(page, search, sort);
 
     if (isLoading) return <>Loading...</>
     if (error) return <>Error while fetching data</>
@@ -27,7 +22,7 @@ export default function Asgn6() {
                 </span>
             </div>
 
-            <ul>{data?.todos.map((todo: any) => (
+            <ul>{data?.todos.map((todo) => (
                 <li key={todo.id}>
                     <span>{todo.title}</span>
                     <span>{todo.completed ? "Done" : "Pending"}</span>

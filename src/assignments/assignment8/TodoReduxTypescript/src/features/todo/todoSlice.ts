@@ -1,21 +1,13 @@
 import { createSlice, nanoid, type PayloadAction } from "@reduxjs/toolkit";
-
-interface Todo {
-    id: string;
-    todo: string;
-    completed: boolean;
-}
+import { initialTodos } from "../../constants";
+import type { Todo } from "../../types";
 
 interface TodoState {
     todos: Todo[];
 }
 
 const initialState: TodoState = {
-    todos: [
-        { id: "1", todo: "Task 1", completed: false },
-        { id: "2", todo: "Task 2", completed: false },
-        { id: "3", todo: "Task 3", completed: false },
-    ],
+    todos: initialTodos,
 };
 
 export const todoSlice = createSlice({
